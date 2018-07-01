@@ -34,3 +34,4 @@ Controls: you'll have to click in the window you want to zoom in first
 	c: increase magnification by 1.0
 	space bar: reset view
 
+Executing the R file from clicking save will plot the MSS/MSD/D values as a histogram colored by the plotted colors
