@@ -1,0 +1,36 @@
+Instructions for ParticleTracker.jar
+
+From the FIJI plugin MOSAIC, save the 'All trajectories to table' (reffered to as All Tracks.csv) and the 'All MSS/MSD to table' (reffered to as D.csv)
+
+Requires Java 10; you can check which version you have by opening the console/cmd and typing 'java -version'
+
+Four mandatory fields:
+	Image Path: path to the image file
+	All Tracks Path: path to the main results file from FIJI/MOSAIC
+	D csv Path: path to the MSS/MSD/D coef file from FIJI/MOSAIC
+	Output Directory: path to the output folder
+Optional Fields:
+	min/max MSS/MSD/D Coeff/frames: filter the trajectories based on user defined inputs, leave blank if no user input
+MSS/MSD/D coeff option: choose which value to color trajectories by
+Plot: plot by selected value
+Save: Saves the plotted trajectories and their associated scales. For using the R scipt, it is recommended to plot all three before saving. Closed plots will still be plotted. Will not overwrite .png or .R files, so make sure you're writing to a new or clean directory each time you save. 
+	MSS_COLOR_DATA.csv: stores which MSS values correspond to which RGB colors, used by the R script to plot colored histograms
+	MSS_IMAGE.csv: stores the zoomed in view
+	MSS_META_DATA.csv: stores information like min/max MSS/MSD/etc
+	MSS_ORIGINAL_SIZE_IMAGE.png: stores the unzoomed view
+	MSS_SCALE_BAR.png: stores the scale bar
+	ParticleTracking.R: R script, Running it will draw colorful histograms
+
+custom colors: if you want to plot by your own colors instead of the default value, type in the RGB values you want seperated by commas with each set seperated by semicolons. for example, to plot from red to green to blue, enter the following:
+255,0,0;255,255,0;0,255,0;0,255,255;0,0,255
+
+Controls: you'll have to click in the window you want to zoom in first
+	w: move up
+	s: move down
+	a: move left
+	d: move right
+	q: increase magnification by 0.3
+	e: decrease magnification by 0.3
+	c: increase magnification by 1.0
+	space bar: reset view
+
